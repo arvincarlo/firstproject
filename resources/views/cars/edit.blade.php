@@ -8,6 +8,10 @@
         <form action="/cars/{{ $car->id }}" method="POST">
             @csrf
             @method('PUT')
+            <div class="file">
+                <label for="name">Image:</label>
+                <input type="file" name="image" value="{{ $car->image_path }}">
+            </div>
             <div class="name">
                 <label for="name">Car name:</label>
                 <input type="text" name="name" value="{{ $car->name }}" placeholder="Brand name...">
@@ -24,5 +28,13 @@
                 <button type="submit">Submit</button>
             </div>
         </form>
+        {{-- {{ var_dump($errors) }} --}}
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <li class="error">{{ $error }}</li>
+            @endforeach
+        @else
+            {{-- <h2>There are no errors!</h2> --}}
+        @endif
     </div>
 @endsection

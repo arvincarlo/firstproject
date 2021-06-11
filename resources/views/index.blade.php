@@ -4,7 +4,7 @@
     <!-- Hero background & content on top of hero background -->
     <div id="hero-container">
         <div class="hero-wrapper">
-            <h1>Arvin Carlo Cris <br> <span class="line">Handsome</span> <span class="orange-txt">Web Developer</span></h1>
+            <h1>Arvin Carlo Cris <br> <span class="line">Cute</span> <span class="orange-txt">Web Developer</span></h1>
 
             <div class="btn-wrapper">
                 <a href="">Let's connect</a>

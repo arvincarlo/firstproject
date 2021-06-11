@@ -15,7 +15,7 @@
     </div> 
     <div class="container-grid-2">
         <div>
-            <img class="img-team" src="{{ URL('storage/corolla-94.jpg') }}" alt="">
+            <img class="img-team" src="{{ asset('images/' . $car->image_path) }}" alt="">
         </div>
         <div>
             <h2>Founded: {{ $car->founded }}</h2>
@@ -25,6 +25,7 @@
                 <tr>
                     <th>Model</th>
                     <th>Engines</th>
+                    <th>Date</th>
                 </tr>
 
                 @forelse ($car->carModels as $model)
@@ -37,11 +38,23 @@
                                 @endif
                             @endforeach
                         </td>
+                        <td>
+                            {{ date('d-m-Y', strtotime($car->productionDate->created_at)) }}
+                        </td>
                     </tr>
                 @empty
                     <p>No car models found</p>                    
                 @endforelse
             </table>
+            <br>
+            <p>
+                Product types:
+                @forelse ($car->products as $product)
+                    <p> {{ $product->name }} </p>
+                @empty
+                    <p>No car product description</p>
+                @endforelse
+            </p>
         </div>
     </div>
 @endsection

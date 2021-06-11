@@ -26,7 +26,7 @@
         @foreach ($cars as $car)
         <div class="container-grid-2">
             <div>
-                <img class="img-team" src="{{ URL('storage/corolla-94.jpg') }}" alt="">
+                <img class="img-team" src="{{ asset('images/' . $car->image_path) }}" alt="">
             </div>
             <div>
                 <h2>Founded: {{ $car->founded }}</h2>
