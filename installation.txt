@@ -1,0 +1,19 @@
+## Firstproject Installation
+
+1. composer install 
+    - this will update the dependecies (composer install or composer update)
+2. duplicate .env_example to .env 
+3. php artisan key:generate 
+    - this is to generate APP_KEY into the .env file
+4. php artisan config:cache
+5. npm install - install node dependecies
+6. npm audit fix - (optional)
+7. npm run dev
+8. php artisan storage:link
+
+## If having problem in npm run mix 
+
+1. npm remove laravel-mix
+2. npm install laravel-mix --save-dev
+3. npm install cross-env --save-dev
+4. npm install && npm run dev
