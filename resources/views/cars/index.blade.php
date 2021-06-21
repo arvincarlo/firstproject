@@ -36,7 +36,7 @@
                 <p>{{ $car->description }}</p>
                 <div class="btn-wrapper">
                     <div class="orange-btn">
-                        <a href="cars/{{ $car->id }}/edit" class="edit-btn btn-success">Edit &rarr;</a>
+                        <a href="cars/{{ $car->id }}/edit" class="btn btn-success">Edit &rarr;</a>
                     </div>
                     <br>
                     <div class="delete-btn">
