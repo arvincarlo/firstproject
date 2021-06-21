@@ -16,7 +16,7 @@
         </a>
         <hr>
         @if (count($cars) > 0)
-            <h2 class="dark big">Cars</h2>
+            <h2 class="dark big">Cars -test </h2>
         @endif
     </div>
     

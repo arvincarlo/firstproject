@@ -132,6 +132,10 @@ class CarsController extends Controller
         $products = Product::find($id);
 
         return view('cars.show')->with('car', $car);
+
+        // return view('products.index', 
+        // compact('cars', 'products', 'description'));
+        // use naming convention
     }
 
     /**
