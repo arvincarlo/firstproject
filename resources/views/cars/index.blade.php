@@ -36,14 +36,14 @@
                 <p>{{ $car->description }}</p>
                 <div class="btn-wrapper">
                     <div class="orange-btn">
-                        <a href="cars/{{ $car->id }}/edit" class="edit-btn">Edit &rarr;</a>
+                        <a href="cars/{{ $car->id }}/edit" class="edit-btn btn-success">Edit &rarr;</a>
                     </div>
                     <br>
                     <div class="delete-btn">
                         <form action="/cars/{{ $car->id }}" method="POST">
                             @csrf
                             @method('delete')
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="btn-danger">Delete</button>
                         </form>
                     </div>
                 </div>

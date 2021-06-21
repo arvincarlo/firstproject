@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" 
         rel="stylesheet"
     />
+    <script src=" {{ asset('js/app.js') }}" defer></script>
     <link 
         rel="stylesheet" 
         href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
