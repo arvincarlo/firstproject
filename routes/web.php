@@ -58,3 +58,7 @@ Route::resource('/cars', CarsController::class);
 // Before Laravel 8
 // Route::get('/products', 'ProductsController@index');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
