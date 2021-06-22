@@ -13,7 +13,7 @@ class Car extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['name', 'founded', 'description', 'image_path'];
+    protected $fillable = ['name', 'founded', 'description', 'image_path', 'user_id'];
 
     // used when not passing all values to the views
     // protected $hidden = ['updated_at'];

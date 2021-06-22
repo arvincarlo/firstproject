@@ -35,17 +35,19 @@
                 </h3>
                 <p>{{ $car->description }}</p>
                 <div class="btn-wrapper">
-                    <div class="orange-btn">
-                        <a href="cars/{{ $car->id }}/edit" class="edit-btn">Edit &rarr;</a>
-                    </div>
-                    <br>
-                    <div class="delete-btn">
-                        <form action="/cars/{{ $car->id }}" method="POST">
-                            @csrf
-                            @method('delete')
-                                <button type="submit">Delete</button>
-                        </form>
-                    </div>
+                    @if (isset(Auth::user()->id) && Auth::user()->id == $car->user_id)
+                        <div class="orange-btn">
+                            <a href="cars/{{ $car->id }}/edit" class="edit-btn">Edit &rarr;</a>
+                        </div>
+                        <br>
+                        <div class="delete-btn">
+                            <form action="/cars/{{ $car->id }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                    <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -55,7 +57,17 @@
             <h2 class="dark big">There are no available cars.</h2>
         </div>
     @endif
-    <div class="create-container">
-        <a href="cars/create">Add a new car &rarr;</a>
-    </div>
+
+    <!-- show only button when user has login -->
+
+    @if (Auth::user())
+        <div class="create-container">
+            <a href="cars/create">Add a new car &rarr;</a>
+        </div>
+    @else
+        <div>
+            <hr>
+            <h2>Please login to create a new car.</h2>
+        </div>
+    @endif
 @endsection
